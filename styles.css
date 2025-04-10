@@ -1,0 +1,112 @@
+/* 全局樣式 */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 20px;
+}
+
+/* Header 區塊，使用 header-image.jpg 作為背景 */
+header {
+  text-align: center;
+  background: url('header-image.jpg') no-repeat center center; /* 從 E:\project\header-image.jpg 引入 */
+  background-size: cover;
+  color: #fff;
+  padding: 50px;
+  position: relative;
+}
+
+/* 標題樣式 */
+h1, h2 {
+  text-align: center;
+}
+
+/* 區塊樣式 */
+section {
+  margin: 20px 0;
+  text-align: center;
+}
+
+/* 通用表單元素樣式 */
+select, button {
+  padding: 8px 12px;
+  font-size: 1em;
+  margin: 10px;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* 御守選擇區、身份選擇區與抽卡結果區 */
+#omamori-list, #identity-list, #card-result {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* 御守與身份項目的樣式 */
+.omamori-item, .identity-item {
+  border: 2px solid transparent;
+  padding: 5px;
+  cursor: pointer;
+  transition: transform 0.3s, border-color 0.3s;
+  text-align: center;
+}
+
+.omamori-item:hover, .identity-item:hover {
+  transform: scale(1.05);
+  border-color: #4CAF50;
+}
+
+.omamori-item.selected, .identity-item.selected {
+  border-color: #4CAF50;
+  box-shadow: 0 0 10px #4CAF50;
+}
+
+.omamori-item img, .identity-item img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+}
+
+/* 抽卡結果圖片樣式 */
+#card-result img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  object-position: center;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: transform 0.3s, border-color 0.3s;
+}
+
+#card-result img:hover {
+  transform: scale(1.1);
+  border-color: #4CAF50;
+}
+
+#card-result img.selected {
+  border-color: #4CAF50;
+  box-shadow: 0 0 10px #4CAF50;
+}
+
+/* 推薦結果區域 */
+#result {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  display: inline-block;
+}

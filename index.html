@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>個人化推薦系統</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <!-- 背景音樂，隱藏 controls，並設定自動播放與循環 -->
+    <audio id="background-music" src="music/background.mp3" autoplay loop style="display: none;"></audio>
+    <h1>個人化推薦系統</h1>
+    <p>請依序選擇您的偏好設定</p>
+  </header>
+
+  <main>
+    <!-- 以下各區塊保持原有內容不變 -->
+    <!-- 1. 御守選擇 (以圖片方式) -->
+    <section id="omamori-section">
+      <h2>1. 選擇御守</h2>
+      <div id="omamori-list">
+        <div class="omamori-item" data-value="goukaku">
+          <img src="omamori/goukaku.jpg" alt="合格守">
+          <p>合格守</p>
+        </div>
+        <div class="omamori-item" data-value="koutsuu">
+          <img src="omamori/koutsuu.jpg" alt="交通安全守">
+          <p>交通安全守</p>
+        </div>
+        <div class="omamori-item" data-value="anzan">
+          <img src="omamori/anzan.jpg" alt="安產守">
+          <p>安產守</p>
+        </div>
+        <div class="omamori-item" data-value="shigyou">
+          <img src="omamori/shigyou.jpg" alt="事業守">
+          <p>事業守</p>
+        </div>
+        <div class="omamori-item" data-value="byouki">
+          <img src="omamori/byouki.jpg" alt="病気平癒守">
+          <p>病気平癒守</p>
+        </div>
+        <div class="omamori-item" data-value="kenkou">
+          <img src="omamori/kenkou.jpg" alt="健康守">
+          <p>健康守</p>
+        </div>
+        <div class="omamori-item" data-value="musubi_hanryo">
+          <img src="omamori/musubi_hanryo.jpg" alt="結緣守-伴侶">
+          <p>結緣守-伴侶</p>
+        </div>
+        <div class="omamori-item" data-value="musubi_enbun">
+          <img src="omamori/musubi_enbun.jpg" alt="結緣守-緣分">
+          <p>結緣守-緣分</p>
+        </div>
+        <div class="omamori-item" data-value="kaiun1">
+          <img src="omamori/kaiun.jpg" alt="開運除惡守1">
+          <p>開運除惡守1</p>
+        </div>
+        <div class="omamori-item" data-value="kaiun2">
+          <img src="omamori/kaiun1.jpg" alt="開運除惡守2">
+          <p>開運除惡守2</p>
+        </div>
+        <div class="omamori-item" data-value="ichou_chouju">
+          <img src="omamori/ichou_chouju.jpg" alt="銀杏守-長壽">
+          <p>銀杏守-長壽</p>
+        </div>
+        <div class="omamori-item" data-value="gakugyou_choukyuu">
+          <img src="omamori/gakugyou_choukyuu.jpg" alt="學業守-長久">
+          <p>學業守-長久</p>
+        </div>
+        <div class="omamori-item" data-value="gakugyou_tairyoku">
+          <img src="omamori/gakugyou_tairyoku.jpg" alt="學業守-耐力">
+          <p>學業守-耐力</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. 身份選擇 (以圖片方式) -->
+    <section id="identity-section">
+      <h2>2. 選擇身份</h2>
+      <div id="identity-list">
+		<div class="identity-item" data-value="student_m">
+          <img src="identities/student_m.jpg" alt="學生(男)">
+          <p>學生（男）</p>
+        </div>
+        <div class="identity-item" data-value="student_f">
+          <img src="identities/student_f.jpg" alt="學生(女)">
+          <p>學生（女）</p>
+        </div>
+        <div class="identity-item" data-value="white_collar_m">
+          <img src="identities/white_collar_m.jpg" alt="白領(男)">
+          <p>白領（男）</p>
+        </div>
+        <div class="identity-item" data-value="white_collar_f">
+          <img src="identities/white_collar_f.jpg" alt="白領(女)">
+          <p>白領（女）</p>
+        </div>
+        <div class="identity-item" data-value="blue_collar_m">
+          <img src="identities/blue_collar_m.jpg" alt="藍領(男)">
+          <p>藍領（男）</p>
+        </div>
+        <div class="identity-item" data-value="blue_collar_f">
+          <img src="identities/blue_collar_f.jpg" alt="藍領(女)">
+          <p>藍領（女）</p>
+        </div>
+        <div class="identity-item" data-value="elderly_m">
+          <img src="identities/elderly_m.jpg" alt="老人(男)">
+          <p>老人（男）</p>
+        </div>
+        <div class="identity-item" data-value="elderly_f">
+          <img src="identities/elderly_f.jpg" alt="老人(女)">
+          <p>老人（女）</p>
+        </div>
+        <div class="identity-item" data-value="household_m">
+          <img src="identities/household_m.jpg" alt="家庭主夫">
+          <p>家庭主夫</p>
+        </div>
+        <div class="identity-item" data-value="household_f">
+          <img src="identities/household_f.jpg" alt="家庭主婦">
+          <p>家庭主婦</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. 抽卡功能 -->
+    <section id="card-section">
+      <h2>3. 抽取多張卡片並選擇一張</h2>
+      <button id="draw-cards">抽卡</button>
+      <div id="card-result">
+        <!-- 卡片顯示區 -->
+      </div>
+    </section>
+
+    <!-- 提交與推薦結果 -->
+    <section id="submit-section">
+      <button id="submit">提交並產生推薦</button>
+    </section>
+    <section id="result-section">
+      <h2>推薦結果</h2>
+      <div id="result"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
