@@ -1,4 +1,3 @@
-/* 全局樣式 */
 body {
   font-family: Arial, sans-serif;
   background-color: #f9f9f9;
@@ -6,28 +5,25 @@ body {
   padding: 20px;
 }
 
-/* Header 區塊，使用 header-image.jpg 作為背景 */
 header {
   text-align: center;
-  background: url('header-image.jpg') no-repeat center center; /* 從 E:\project\header-image.jpg 引入 */
+  background: url('header-image.jpg') no-repeat center center; 
   background-size: cover;
   color: #fff;
-  padding: 50px;
+  padding: 80px;
   position: relative;
 }
 
-/* 標題樣式 */
 h1, h2 {
   text-align: center;
 }
 
-/* 區塊樣式 */
 section {
   margin: 20px 0;
   text-align: center;
 }
 
-/* 通用表單元素樣式 */
+/* 表單 */
 select, button {
   padding: 8px 12px;
   font-size: 1em;
@@ -54,7 +50,6 @@ button:hover {
   margin-top: 10px;
 }
 
-/* 御守與身份項目的樣式 */
 .omamori-item, .identity-item {
   border: 2px solid transparent;
   padding: 5px;
@@ -81,7 +76,7 @@ button:hover {
   margin: 0 auto;
 }
 
-/* 抽卡結果圖片樣式 */
+/* 抽卡 */
 #card-result img {
   width: 225px;  
   height: 300px; 
@@ -111,7 +106,7 @@ button:hover {
   display: inline-block;
 }
 
-/* 洗牌動畫容器 */
+/* 洗牌動畫 */
 #card-shuffle-container {
   position: fixed;
   top: 0;
@@ -168,7 +163,7 @@ button:hover {
   }
 }
 
-/* SAM情緒評估區域 */
+/* SAM */
 #sam-section {
   margin-top: 40px;
   padding: 20px;
