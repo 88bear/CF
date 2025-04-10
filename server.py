@@ -60,5 +60,33 @@ def recommend():
         "prompt": prompt
     })
 
+# 新增情緒評估資料接收端點
+@app.route('/api/emotional_feedback', methods=['POST'])
+def emotional_feedback():
+    data = request.get_json()
+    
+    # 獲取情緒評估資料
+    valence = data.get('valence')
+    arousal = data.get('arousal')
+    dominance = data.get('dominance')
+    omamori = data.get('omamori')
+    identity = data.get('identity')
+    
+    # 這裡可以保存資料到資料庫或進行其他處理
+    # 在實際應用中，你可能希望將這些資料與用戶ID和推薦結果一起存儲
+    
+    print(f"情緒評估接收: 身份={identity}, 御守={omamori}, 愉悅度={valence}, 喚起度={arousal}, 主導感={dominance}")
+    
+    # 返回確認訊息
+    return jsonify({
+        "status": "success",
+        "message": "Emotional feedback received successfully",
+        "data": {
+            "valence": valence,
+            "arousal": arousal,
+            "dominance": dominance
+        }
+    })
+
 if __name__ == '__main__':
     app.run(debug=True)
