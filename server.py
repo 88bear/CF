@@ -19,7 +19,7 @@ product_map = {
     "household_f": ["Elegant Purse", "Eco-Friendly Tote"]
 }
 
-# 正向且模稜兩可的提示範本，並帶入使用者身份與推薦產品資訊
+# 正向且模稜兩可的prompt，並帶入使用者身份與推薦產品資訊
 prompt_templates = [
     "As a {identity}, you have a unique sense of style that always shines through. A {product} is a wonderful match for your dynamic lifestyle.",
     "For someone like you ({identity}), a {product} blends functionality with sophistication perfectly.",
@@ -37,19 +37,19 @@ def recommend():
     # 根據身份取得推薦產品，若無對應則使用預設商品
     recommended_products = product_map.get(identity, ["Universal Bag"])
     
-    # 根據抽卡結果，可附加額外推薦 (範例)
+    # 抽卡結果 (範例)
     if "card1" in selected_card:
         recommended_products.append("Limited Edition Bag")
     elif "card2" in selected_card:
         recommended_products.append("Seasonal Special Bag")
     
-    # 隨機挑選一款產品，供生成提示語使用
+    # 隨機挑選一款產品生成提示語使用(範例)
     product_for_prompt = random.choice(recommended_products)
     
-    # 格式化身份文字（例如將 "student_m" 轉為 "Student M"）
+    # 格式化身份文字（例如將 "student_m" 轉為 "Student M"）(範例)
     identity_readable = identity.replace("_", " ").title()
     
-    # 隨機採用一個提示範本，生成個性化提示語
+    # 隨機採用一個提示生成個性化提示語(範例)
     prompt = random.choice(prompt_templates).format(identity=identity_readable, product=product_for_prompt)
 
     return jsonify({
@@ -60,20 +60,19 @@ def recommend():
         "prompt": prompt
     })
 
-# 新增情緒評估資料接收端點
 @app.route('/api/emotional_feedback', methods=['POST'])
 def emotional_feedback():
     data = request.get_json()
     
-    # 獲取情緒評估資料
+    # 獲取SAM資料
     valence = data.get('valence')
     arousal = data.get('arousal')
     dominance = data.get('dominance')
     omamori = data.get('omamori')
     identity = data.get('identity')
     
-    # 這裡可以保存資料到資料庫或進行其他處理
-    # 在實際應用中，你可能希望將這些資料與用戶ID和推薦結果一起存儲
+    # 這裡可以保存資料或做其他事(未做
+
     
     print(f"情緒評估接收: 身份={identity}, 御守={omamori}, 愉悅度={valence}, 喚起度={arousal}, 主導感={dominance}")
     
